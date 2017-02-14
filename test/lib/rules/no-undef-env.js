@@ -77,6 +77,15 @@ ruleTester.run("no-undef-env", rule, {
         // new.target: https://github.com/eslint/eslint/issues/5420
         { code: "class A { constructor() { new.target; } }", parserOptions: { ecmaVersion: 6 } },
 
+        // sourceType: 'module'
+        {
+            code: "function a(){}if (APP_ENV === 'browser') {a(window)}",
+            parserOptions: {
+                ecmaVersion: 6,
+                sourceType: 'module'
+            }
+        },
+
         // Experimental,
         {
             code: "var {bacon, ...others} = stuff; foo(others)",
@@ -88,6 +97,7 @@ ruleTester.run("no-undef-env", rule, {
             },
             globals: { stuff: false, foo: false }
         }
+
     ],
     invalid: [
         { code: "a = 1;", errors: [{ message: "'a' is not defined.", type: "Identifier" }] },
