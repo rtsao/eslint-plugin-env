@@ -2,6 +2,7 @@
   "name": "eslint-plugin-env",
   "version": "0.0.3",
   "description": "Environment-based linting rules for ESLint",
+  "keywords": ["eslint", "eslintplugin"],
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "homepage": "https://github.com/rtsao/eslint-plugin-env",
   "repository": "git@github.com:rtsao/eslint-plugin-env.git",
